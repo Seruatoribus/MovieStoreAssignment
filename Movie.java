@@ -1,5 +1,5 @@
 package bad.robot.refactoring.chapter1;
-
+//James and Nick
 public class Movie {
 
     public static final int CHILDREN = 2;
