@@ -2,7 +2,7 @@ package bad.robot.refactoring.chapter1;
 
 import java.util.ArrayList;
 import java.util.List;
-// James and Nick
+
 public class Customer {
 
     private String name;
@@ -46,23 +46,23 @@ public class Customer {
         return result;
     }
     
-    double amountFor(Rental rental){
-        double thisAmount = 0;
-        switch (rental.getMovie().getPriceCode()) {
+    double amountFor(Rental aRental){
+        double newAmount = 0;
+        switch (aRental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
+                newAmount += 2;
+                if (aRental.getDaysRented() > 2)
+                    newAmount += (aRental.getDaysRented() - 2) * 1.5;
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
+                newAmount += aRental.getDaysRented() * 3;
                 break;
             case Movie.CHILDREN:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
+                newAmount += 1.5;
+                if (aRental.getDaysRented() > 3)
+                    newAmount += (aRental.getDaysRented() - 3) * 1.5;
                 break;
         }
-        return thisAmount;
+        return newAmount;
     }
 }
