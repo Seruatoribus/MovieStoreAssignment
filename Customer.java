@@ -57,4 +57,20 @@ public class Customer {
         }
         return result;
     }
+    
+    public String getHTMLstatement() {
+
+        String result = "<h1>Rental record for <em>" + getName() + "</em></h1><p>\n";
+        for (Rental rental : rentals) {
+
+            // show figures for this rental
+            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(amountFor(rental)) + "<br>\n";
+
+        }
+
+        result += "<p>Amount owed is <em>" + getTotalCharge() + "</em></p>\n";
+        result += "You earned <em>" + getTotalFrequentRenterPoints() + "</em> frequent renter points</p>";
+
+        return result;
+    }
 }
